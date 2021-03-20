@@ -10,25 +10,29 @@
 		5C275779FD04DF9143E9F663 /* Pods_Homework_Storyboard_8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECBCF4FC50288F8AF09883DD /* Pods_Homework_Storyboard_8.framework */; };
 		5D393C112602697300E0931B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D393C102602697300E0931B /* AppDelegate.swift */; };
 		5D393C132602697300E0931B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D393C122602697300E0931B /* SceneDelegate.swift */; };
-		5D393C152602697300E0931B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D393C142602697300E0931B /* ViewController.swift */; };
 		5D393C182602697300E0931B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D393C162602697300E0931B /* Main.storyboard */; };
 		5D393C1A2602697600E0931B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D393C192602697600E0931B /* Assets.xcassets */; };
 		5D393C1D2602697600E0931B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D393C1B2602697600E0931B /* LaunchScreen.storyboard */; };
 		5D393C33260274D800E0931B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D393C32260274D800E0931B /* Task.swift */; };
 		5D393C372602750100E0931B /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D393C362602750100E0931B /* TaskList.swift */; };
+		5D393C3B26065D1100E0931B /* TasksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D393C3A26065D1100E0931B /* TasksListViewController.swift */; };
+		5D393C3E26065D7800E0931B /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D393C3D26065D7800E0931B /* TasksTableViewController.swift */; };
+		5D393C412606647800E0931B /* RealmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D393C402606647800E0931B /* RealmDB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5D393C0D2602697300E0931B /* Homework_Storyboard_8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homework_Storyboard_8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D393C102602697300E0931B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D393C122602697300E0931B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5D393C142602697300E0931B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5D393C172602697300E0931B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D393C192602697600E0931B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D393C1C2602697600E0931B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D393C1E2602697600E0931B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D393C32260274D800E0931B /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		5D393C362602750100E0931B /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
+		5D393C3A26065D1100E0931B /* TasksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListViewController.swift; sourceTree = "<group>"; };
+		5D393C3D26065D7800E0931B /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
+		5D393C402606647800E0931B /* RealmDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDB.swift; sourceTree = "<group>"; };
 		7F9552935A096A6E21D8408F /* Pods-Homework_Storyboard_8.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Homework_Storyboard_8.debug.xcconfig"; path = "Target Support Files/Pods-Homework_Storyboard_8/Pods-Homework_Storyboard_8.debug.xcconfig"; sourceTree = "<group>"; };
 		ECBCF4FC50288F8AF09883DD /* Pods_Homework_Storyboard_8.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Homework_Storyboard_8.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF3CDF100002D838C1C477CF /* Pods-Homework_Storyboard_8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Homework_Storyboard_8.release.xcconfig"; path = "Target Support Files/Pods-Homework_Storyboard_8/Pods-Homework_Storyboard_8.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,11 +82,13 @@
 				5D393C31260274C900E0931B /* Model */,
 				5D393C102602697300E0931B /* AppDelegate.swift */,
 				5D393C122602697300E0931B /* SceneDelegate.swift */,
-				5D393C142602697300E0931B /* ViewController.swift */,
 				5D393C162602697300E0931B /* Main.storyboard */,
 				5D393C192602697600E0931B /* Assets.xcassets */,
 				5D393C1B2602697600E0931B /* LaunchScreen.storyboard */,
 				5D393C1E2602697600E0931B /* Info.plist */,
+				5D393C3A26065D1100E0931B /* TasksListViewController.swift */,
+				5D393C3D26065D7800E0931B /* TasksTableViewController.swift */,
+				5D393C402606647800E0931B /* RealmDB.swift */,
 			);
 			path = Homework_Storyboard_8;
 			sourceTree = "<group>";
@@ -219,9 +225,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D393C3E26065D7800E0931B /* TasksTableViewController.swift in Sources */,
 				5D393C33260274D800E0931B /* Task.swift in Sources */,
 				5D393C372602750100E0931B /* TaskList.swift in Sources */,
-				5D393C152602697300E0931B /* ViewController.swift in Sources */,
+				5D393C412606647800E0931B /* RealmDB.swift in Sources */,
+				5D393C3B26065D1100E0931B /* TasksListViewController.swift in Sources */,
 				5D393C112602697300E0931B /* AppDelegate.swift in Sources */,
 				5D393C132602697300E0931B /* SceneDelegate.swift in Sources */,
 			);
