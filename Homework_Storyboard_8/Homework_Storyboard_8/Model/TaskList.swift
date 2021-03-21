@@ -10,4 +10,10 @@ class TaskList: Object {
         self.init()
         self.name = name
     }
+    
+    var completedTasksCount: Int {
+        (tasks.filter({
+            $0.isComplete
+        })).count
+    }
 }

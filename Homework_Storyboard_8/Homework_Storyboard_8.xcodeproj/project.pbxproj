@@ -18,6 +18,7 @@
 		5D393C3B26065D1100E0931B /* TasksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D393C3A26065D1100E0931B /* TasksListViewController.swift */; };
 		5D393C3E26065D7800E0931B /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D393C3D26065D7800E0931B /* TasksTableViewController.swift */; };
 		5D393C412606647800E0931B /* RealmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D393C402606647800E0931B /* RealmDB.swift */; };
+		5D393C452607A0BB00E0931B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D393C442607A0BB00E0931B /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		5D393C3A26065D1100E0931B /* TasksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListViewController.swift; sourceTree = "<group>"; };
 		5D393C3D26065D7800E0931B /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
 		5D393C402606647800E0931B /* RealmDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDB.swift; sourceTree = "<group>"; };
+		5D393C442607A0BB00E0931B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		7F9552935A096A6E21D8408F /* Pods-Homework_Storyboard_8.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Homework_Storyboard_8.debug.xcconfig"; path = "Target Support Files/Pods-Homework_Storyboard_8/Pods-Homework_Storyboard_8.debug.xcconfig"; sourceTree = "<group>"; };
 		ECBCF4FC50288F8AF09883DD /* Pods_Homework_Storyboard_8.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Homework_Storyboard_8.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF3CDF100002D838C1C477CF /* Pods-Homework_Storyboard_8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Homework_Storyboard_8.release.xcconfig"; path = "Target Support Files/Pods-Homework_Storyboard_8/Pods-Homework_Storyboard_8.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				5D393C3A26065D1100E0931B /* TasksListViewController.swift */,
 				5D393C3D26065D7800E0931B /* TasksTableViewController.swift */,
 				5D393C402606647800E0931B /* RealmDB.swift */,
+				5D393C442607A0BB00E0931B /* Utils.swift */,
 			);
 			path = Homework_Storyboard_8;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				5D393C3B26065D1100E0931B /* TasksListViewController.swift in Sources */,
 				5D393C112602697300E0931B /* AppDelegate.swift in Sources */,
 				5D393C132602697300E0931B /* SceneDelegate.swift in Sources */,
+				5D393C452607A0BB00E0931B /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
