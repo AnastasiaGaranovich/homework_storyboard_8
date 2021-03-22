@@ -7,7 +7,7 @@ class TasksTableViewController: UITableViewController {
     
     private var completed: Results<Task>!
     private var uncompleted: Results<Task>!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         completed   = task.tasks.filter("isComplete = true")
@@ -17,10 +17,6 @@ class TasksTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
-    }
-    
-    @IBAction func editTaskButtonPressed(_ sender: UIBarButtonItem) {
-    
     }
     
     @IBAction func addTaskButtonPressed(_ sender: UIBarButtonItem) {
@@ -34,9 +30,7 @@ class TasksTableViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "Save", style: .default, handler: {_ in
             let nameTextField = alert.textFields![0]
             let noteTextField = alert.textFields![1]
-            try! RealmDB.dataBase.write {
-                self.task.tasks.append(Task(name: nameTextField.text ?? "No name", note: noteTextField.text ?? "None"))
-            }
+            RealmDB.addTask(taskList: self.task, name: nameTextField.text ?? "No name", note: noteTextField.text ?? "None")
             self.tableView.reloadData()
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: {_ in
@@ -77,5 +71,36 @@ class TasksTableViewController: UITableViewController {
         else {
             return completed
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let task = arrayForSection(numberOfSection: indexPath.section)[indexPath.row]
+        RealmDB.deleteTask(task: task)
+        tableView.reloadData()
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let task = arrayForSection(numberOfSection: indexPath.section)[indexPath.row]
+        
+        let deleteContextItem = UIContextualAction(style: .destructive, title: "Delete") { (_, _, _) in
+            RealmDB.deleteTask(task: task)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        
+        let editContextItem = UIContextualAction(style: .normal, title: "Edit") { (_, _, _) in
+            
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+        
+        let doneContextItem = UIContextualAction(style: .normal, title: "Done") { (_, _, _) in
+            RealmDB.taskDone(task: task)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+        
+        editContextItem.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        doneContextItem.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        
+        let swipeActions = UISwipeActionsConfiguration(actions: [deleteContextItem, editContextItem, doneContextItem])
+        return swipeActions
     }
 }

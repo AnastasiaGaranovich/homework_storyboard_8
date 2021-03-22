@@ -46,5 +46,28 @@ extension TasksListViewController: UITableViewDelegate, UITableViewDataSource {
         pushController(viewController: controller)
     }
     
-    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let taskList = self.taskLists[indexPath.row]
+        
+        let deleteContextItem = UIContextualAction(style: .destructive, title: "Delete") { (_, _, _) in
+            RealmDB.deleteTaskList(taskList: taskList)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        
+        let editContextItem = UIContextualAction(style: .normal, title: "Edit") { (_, _, _) in
+            
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+        
+        let doneContextItem = UIContextualAction(style: .normal, title: "Done") { (_, _, _) in
+            RealmDB.taskListAllDone(taskList: taskList)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+        
+        editContextItem.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        doneContextItem.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        
+        let swipeActions = UISwipeActionsConfiguration(actions: [deleteContextItem, editContextItem, doneContextItem])
+        return swipeActions
+    }
 }
