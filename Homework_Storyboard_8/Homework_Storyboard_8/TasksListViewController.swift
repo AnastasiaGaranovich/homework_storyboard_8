@@ -21,6 +21,10 @@ class TasksListViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func filterTaskList(_ sender: UISegmentedControl) {
+        //сделать сортировку по нажатию на сегм контрол
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
@@ -55,7 +59,8 @@ extension TasksListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         let editContextItem = UIContextualAction(style: .normal, title: "Edit") { (_, _, _) in
-            
+            //сделать алерт для изменения тасклиста
+            RealmDB.editTaskList(taskList: taskList, name: "")
             tableView.reloadRows(at: [indexPath], with: .automatic)
         }
         

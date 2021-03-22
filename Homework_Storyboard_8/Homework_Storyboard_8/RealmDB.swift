@@ -41,11 +41,16 @@ class RealmDB {
         }
     }
     
-    static func editTaskList(taskList: TaskList) {
-        
+    static func editTaskList(taskList: TaskList, name: String) {
+        try! dataBase.write {
+            taskList.setValue(name, forKey: "name")
+        }
     }
     
-    static func editTask(task: Task) {
-        
+    static func editTask(task: Task, name: String, note: String) {
+        try! dataBase.write {
+            task.setValue(name, forKey: "name")
+            task.setValue(note, forKey: "note")
+        }
     }
 }

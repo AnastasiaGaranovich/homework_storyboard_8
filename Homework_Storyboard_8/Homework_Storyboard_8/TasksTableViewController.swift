@@ -88,7 +88,8 @@ class TasksTableViewController: UITableViewController {
         }
         
         let editContextItem = UIContextualAction(style: .normal, title: "Edit") { (_, _, _) in
-            
+            //сделать алерт для изменения таски
+            RealmDB.editTask(task: task, name: "", note: "")
             tableView.reloadRows(at: [indexPath], with: .automatic)
         }
         

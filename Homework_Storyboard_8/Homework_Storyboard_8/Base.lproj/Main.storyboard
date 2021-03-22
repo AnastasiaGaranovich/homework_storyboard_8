@@ -39,6 +39,9 @@
                                     <segment title="A-Z"/>
                                     <segment title="Date"/>
                                 </segments>
+                                <connections>
+                                    <action selector="filterTaskList:" destination="Twj-QA-N2n" eventType="valueChanged" id="oaQ-MG-YNS"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wch-sH-eph">
                                 <rect key="frame" x="0.0" y="126" width="414" height="736"/>
