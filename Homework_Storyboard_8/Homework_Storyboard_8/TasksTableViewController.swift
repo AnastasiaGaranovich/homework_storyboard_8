@@ -84,18 +84,31 @@ class TasksTableViewController: UITableViewController {
         
         let deleteContextItem = UIContextualAction(style: .destructive, title: "Delete") { (_, _, _) in
             RealmDB.deleteTask(task: task)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.reloadData()
         }
         
         let editContextItem = UIContextualAction(style: .normal, title: "Edit") { (_, _, _) in
-            //сделать алерт для изменения таски
-            RealmDB.editTask(task: task, name: "", note: "")
-            tableView.reloadRows(at: [indexPath], with: .automatic)
+            let alert = UIAlertController(title: "Edit Task", message: "", preferredStyle: .alert)
+            alert.addTextField(configurationHandler: {textField in
+                textField.placeholder = "Enter task's name"
+            })
+            alert.addTextField(configurationHandler: {textField in
+                textField.placeholder = "Enter task's note"
+            })
+            alert.addAction(UIAlertAction(title: "Save", style: .default, handler: {_ in
+                let nameTextField = alert.textFields![0]
+                let noteTextField = alert.textFields![1]
+                RealmDB.editTask(task: task, name: nameTextField.text ?? "No name", note: noteTextField.text ?? "None")
+                self.tableView.reloadData()
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: {_ in
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
         
         let doneContextItem = UIContextualAction(style: .normal, title: "Done") { (_, _, _) in
             RealmDB.taskDone(task: task)
-            tableView.reloadRows(at: [indexPath], with: .automatic)
+            tableView.reloadData()
         }
         
         editContextItem.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
